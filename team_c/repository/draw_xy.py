@@ -17,16 +17,16 @@ class DrawXY(EnvExperiment):
         # self.samples_y=[Amplitude * numpy.cos(2*numpy.pi*i / sample_num * 2) for i in range(sample_num)]
 
     def prepare(self):
-        amplitude = 1* V
+        amplitude = 400*mV
         samples_x = []
         samples_y = []
         print(os.getcwd())
 
-        with open('../../../repository/converted_arrays.csv') as fp: #../../../repository/
+        with open('../../../repository/converted_arrays_top_bottom.csv') as fp: #../../../repository/
             reader=csv.reader(fp)
             next(reader)
             for i, row in enumerate(reader):
-                if i % 1000 ==0:
+                if i % 1 ==0:
                     samples_x.append(float(row[0]))
                     samples_y.append(float(row[1]))
         
